@@ -41,4 +41,4 @@ services:
       - key: LLM_API_KEY          # paste your free Groq key (gsk_...)
         sync: false
       - key: ML_SERVICE_URL
-        value: https://edupath-ml.onrender.com
+        value: https://edupath-ml-og3b.onrender.com
