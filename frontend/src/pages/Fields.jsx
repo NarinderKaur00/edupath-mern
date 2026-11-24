@@ -45,10 +45,6 @@ export default function Fields() {
           </section>
         ))}
       </div>
-
-      <p className="muted small" style={{ marginTop: 14 }}>
-        📌 Note: the model is trained on a relabeled stand-in dataset (demonstration data, not real Thapar records).
-      </p>
     </>
   );
 }
