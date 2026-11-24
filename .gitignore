@@ -1,0 +1,19 @@
+# Node
+node_modules/
+npm-install.log
+*.log
+
+# Env & secrets (never commit real keys)
+.env
+backend/.env
+frontend/.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build output
+frontend/dist/
+uvicorn.log

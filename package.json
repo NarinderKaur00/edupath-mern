@@ -1,0 +1,11 @@
+{
+  "name": "edupath-mern",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EduPath MERN — Node serves the React build + API; a separate Python service runs the ML.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install",
+    "start": "node backend/src/server.js"
+  }
+}

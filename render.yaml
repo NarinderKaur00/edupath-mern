@@ -1,0 +1,44 @@
+# Render Blueprint for EduPath (MERN + Python ML).
+# Two services:
+#   1) edupath-ml  — Python FastAPI that runs the XGBoost models
+#   2) edupath     — Node/Express that serves the React build AND the API
+#
+# After the first deploy, if Render gives the ML service a URL other than
+# https://edupath-ml.onrender.com, update ML_SERVICE_URL on the "edupath"
+# service to match.
+services:
+  # ---- Python ML service ----
+  - type: web
+    name: edupath-ml
+    runtime: python
+    plan: free
+    rootDir: ml-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+
+  # ---- Node app (React build + API) ----
+  - type: web
+    name: edupath
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: MONGODB_URI          # paste your MongoDB Atlas connection string
+        sync: false
+      - key: MONGODB_DB
+        value: edupath_mern
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_USER
+        value: admin
+      - key: ADMIN_PASS           # set your own admin password
+        sync: false
+      - key: LLM_PROVIDER
+        value: groq
+      - key: LLM_API_KEY          # paste your free Groq key (gsk_...)
+        sync: false
+      - key: ML_SERVICE_URL
+        value: https://edupath-ml.onrender.com
