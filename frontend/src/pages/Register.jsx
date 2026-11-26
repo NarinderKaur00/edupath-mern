@@ -34,7 +34,7 @@ export default function Register() {
       <div className="auth-hero">
         <div className="auth-hero-inner">
           <div className="brand-logo big">🎓</div>
-          <h1>EduPath</h1>
+          <h1>Elective AI</h1>
           <p className="tagline">Create your student account and discover the electives that fit you best.</p>
           <ul className="hero-points">
             <li>✓ Personalised to your grades</li>

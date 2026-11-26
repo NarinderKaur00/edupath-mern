@@ -19,7 +19,7 @@ function Sidebar() {
       <div className="brand">
         <div className="brand-logo">🎓</div>
         <div className="brand-text">
-          <strong>EduPath</strong>
+          <strong>Elective AI</strong>
           <span>Elective Advisor</span>
         </div>
       </div>

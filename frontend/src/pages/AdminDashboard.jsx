@@ -66,7 +66,7 @@ export default function AdminDashboard() {
   return (
     <div className="admin-shell">
       <header className="admin-bar">
-        <div className="admin-brand">🛠️ <strong>EduPath Admin</strong></div>
+        <div className="admin-brand">🛠️ <strong>Elective AI Admin</strong></div>
         <button className="btn btn-ghost btn-sm" onClick={logout}>Sign out</button>
       </header>
 

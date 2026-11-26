@@ -43,7 +43,7 @@ export default function Dashboard() {
       <div className="hero-card">
         <div className="hero-card-text">
           <h2>Hi {firstName} 👋</h2>
-          <p>Enter your marks and let EduPath predict the electives where you're most likely to excel.</p>
+          <p>Enter your marks and let Elective AI predict the electives where you're most likely to excel.</p>
           <div className="hero-actions">
             {hasResults ? (
               <>

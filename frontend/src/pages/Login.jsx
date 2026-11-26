@@ -38,7 +38,7 @@ export default function Login() {
       <div className="auth-hero">
         <div className="auth-hero-inner">
           <div className="brand-logo big">🎓</div>
-          <h1>EduPath</h1>
+          <h1>Elective AI</h1>
           <p className="tagline">Smart elective &amp; field recommendations, powered by your own academic results.</p>
           <ul className="hero-points">
             <li>✓ Predict your grade in every elective</li>

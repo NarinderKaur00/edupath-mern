@@ -90,10 +90,16 @@ export default function Marks() {
         </section>
       ))}
 
+      {error && <div className="flash flash-danger">{error}</div>}
+      {busy && (
+        <div className="muted small" style={{ textAlign: "right" }}>
+          ⏳ Working… if the server was asleep this can take up to a minute.
+        </div>
+      )}
       <div className="sticky-actions">
         <Link to="/dashboard" className="btn btn-ghost">Cancel</Link>
         <button type="button" className="btn btn-primary" disabled={busy} onClick={() => submit("save")}>💾 Save Results</button>
-        <button type="submit" className="btn btn-accent" disabled={busy}>✨ Save &amp; Recommend</button>
+        <button type="submit" className="btn btn-accent" disabled={busy}>{busy ? "⏳ Please wait…" : <>✨ Save &amp; Recommend</>}</button>
       </div>
     </form>
   );

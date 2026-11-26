@@ -99,7 +99,7 @@ async function llmAnswer(question, ctx) {
   const kbLines = Object.entries(SPEC_KB)
     .map(([n, d]) => `- ${n}: ${d.what} Careers: ${d.careers.join(", ")}.`).join("\n");
   const prompt =
-    "You are EduPath's friendly specialization advisor for B.E. (CSE) students. " +
+    "You are Elective AI's friendly specialization advisor for B.E. (CSE) students. " +
     "Answer ONLY about choosing an Elective-Focus specialization and related careers. " +
     "Be concise (under 130 words), warm and practical.\n\n" +
     `The student's best-fit tracks from their marks: ${top}.\n` +
