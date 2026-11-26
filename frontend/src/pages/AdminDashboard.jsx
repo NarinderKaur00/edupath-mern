@@ -75,26 +75,18 @@ export default function AdminDashboard() {
 
         <h1 className="page-title" style={{ margin: "6px 0 18px" }}>Admin Dashboard</h1>
 
-        <div className="stat-grid">
+        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
           <div className="stat-card"><div className="stat-ico blue">👥</div>
             <div><div className="stat-num">{d.n_students}</div><div className="stat-lbl">Registered students</div></div></div>
           <div className="stat-card"><div className="stat-ico green">📝</div>
             <div><div className="stat-num">{d.n_with_results}</div><div className="stat-lbl">Entered results</div></div></div>
           <div className="stat-card"><div className="stat-ico orange">✨</div>
             <div><div className="stat-num">{d.n_recs}</div><div className="stat-lbl">Recommendations made</div></div></div>
-          <div className="stat-card"><div className="stat-ico purple">🤖</div>
-            <div><div className="stat-num">{d.avg_acc}%</div><div className="stat-lbl">Avg model accuracy</div></div></div>
         </div>
 
         <div className="grid-2">
           <section className="panel">
-            <h3 className="panel-title">🗂️ Training dataset &amp; models</h3>
-            <ul className="kv">
-              <li><span>Dataset rows (students)</span><strong>{d.ds_rows}</strong></li>
-              <li><span>Columns</span><strong>{d.ds_cols}</strong></li>
-              <li><span>Input courses (features)</span><strong>{d.n_feat}</strong></li>
-              <li><span>Electives predicted</span><strong>{d.n_elec}</strong></li>
-            </ul>
+            <h3 className="panel-title">🗂️ Models &amp; data</h3>
             <form onSubmit={retrain} className="retrain-form">
               <label className="muted small">Optional: upload a new student dataset (.csv) with the same columns</label>
               <input type="file" accept=".csv" className="file-input" ref={fileRef} />
@@ -142,19 +134,6 @@ export default function AdminDashboard() {
                 )) : <tr><td colSpan="7" className="muted">No students registered yet.</td></tr>}
               </tbody>
             </table>
-          </div>
-        </section>
-
-        <section className="panel">
-          <h3 className="panel-title">🤖 Model accuracy per elective</h3>
-          <div className="perf-list">
-            {d.perf.map((p) => (
-              <div className="perf-row" key={p.subject}>
-                <span className="perf-subj" title={p.name}>{p.subject}</span>
-                <div className="perf-bar"><span className={p.accuracy >= 80 ? "good" : (p.accuracy >= 70 ? "ok" : "low")} style={{ width: `${p.accuracy}%` }} /></div>
-                <span className="perf-val">{p.accuracy}%</span>
-              </div>
-            ))}
           </div>
         </section>
 
